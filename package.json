@@ -11,5 +11,16 @@
     "@types/pg": "^8.11.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
-  }
+  },
+  "name": "backend",
+  "description": "todo for backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "Bhuwan Paudel",
+  "license": "MIT"
 }
