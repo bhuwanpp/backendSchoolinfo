@@ -1,0 +1,6 @@
+CREATE TABLE schoolData(
+    id SERIAL PRIMARY KEY,
+    rollNo INTEGER NOT NULL UNIQUE,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE
+);
