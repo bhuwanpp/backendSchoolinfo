@@ -14,7 +14,6 @@ app.use(cors());
 
 const dbUrl: string = process.env.DATABASE_URL!
 
-
 const pool = new Pool({
     connectionString: dbUrl,
     ssl: {
@@ -32,7 +31,7 @@ app.get('/', (req: Request, res: Response) => {
 })
 app.route('/students/')
     .get(async (req: Request, res: Response): Promise<Response> => {
-        const query: QueryResult = await pool.query('SELECT * FROM schoolData;')
+        const query: QueryResult = await pool.query('SELECT * FROM schoolData ORDER BY rollno ASC;')
         return res.json(query.rows)
     })
 
