@@ -45,10 +45,10 @@ app.route('/students/')
 app.route('/students/:id')
     .put(async (req: Request, res: Response): Promise<Response> => {
         const id = req.params.id
-        const { name, rollno, email } = req.body;
+        const { name } = req.body;
         const query: QueryResult = await
-            pool.query('UPDATE schoolData SET name= $1,email =$2 WHERE rollno = $3 RETURNING * ',
-                [name, email, id])
+            pool.query('UPDATE schoolData SET name= $1 WHERE rollno = $2 RETURNING * ',
+                [name, id])
         return res.json(query.rows)
     })
     .delete(async (req: Request, res: Response): Promise<Response> => {
